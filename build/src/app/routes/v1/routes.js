@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const auth_1 = __importDefault(require("@src/app/middlewares/auth"));
+const userRegisterController_1 = __importDefault(require("@controllers/usersController/userRegisterController"));
+const userGetController_1 = __importDefault(require("@controllers/usersController/userGetController"));
+const tasksRegisterController_1 = __importDefault(require("@controllers/tasksController/tasksRegisterController"));
+const tasksUpdateController_1 = __importDefault(require("@controllers/tasksController/tasksUpdateController"));
+const tasksViewController_1 = __importDefault(require("@controllers/tasksController/tasksViewController"));
+const router = express_1.default.Router();
+router.post('/register_user', userRegisterController_1.default.index);
+router.get('/login_user', userGetController_1.default.login);
+router.post('/insertTasks', auth_1.default, tasksRegisterController_1.default.RegisterTasksUser);
+router.put('/finishTask', auth_1.default, tasksUpdateController_1.default.FinishTaskUser);
+router.put('/updateTask', auth_1.default, tasksUpdateController_1.default.UpdateTaskUser);
+router.get('/getTaskUser', auth_1.default, tasksViewController_1.default.ViewTaskUser);
+router.get('/getTaskAll', auth_1.default, tasksViewController_1.default.ViewAllTask);
+router.get('/getTaskAllLate', auth_1.default, tasksViewController_1.default.ViewAllTaskLate);
+exports.default = router.use('/v1', router);

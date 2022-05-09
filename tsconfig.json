@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es6"],
+    "allowJs": true,
+    "rootDir": ".",
+    "outDir": "build",  
+    "removeComments": true,
+    "typeRoots": ["./node_modules/@types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@controllers/*": ["./src/app/controllers/*"],
+      "@models/*": ["./src/app/models/*"],
+      "@routes/*": ["./src/app/routes/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@config/*": ["./src/config/*"],
+      "@src/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}

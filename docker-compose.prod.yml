@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    command: node build/index.js && yarn start
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+
+  db:
+    container_name: 'mysql_database_ubistart'
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '3308:3306'
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_ubistart
+    cap_add:
+      - SYS_NICE

@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "40e979f1-2151-4c63-95ea-1a60a5edd91f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register_user_adm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"diegoAdm@gmail.com\",\n\t\"password\": \"12345\",\n\t\"profile\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/register_user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"register_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"diego@gmail.com\",\n\t\"password\": \"12345\",\n\t\"profile\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/register_user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"register_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/login_user?email=diego@gmail.com&password=12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"login_user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "diego@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertTodo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMDU2OTI1LCJleHAiOjE2NTIxNDMzMjV9.dXGa-KMNCdHfr8DeC0r5x18Xb81B5p-Jlht6fTAlfR8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"22\",\n\t\"status\": \"Todo\",\n\t\"deadline\": \"2022-04-10 21:46:17\",\n\t\"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/insertTasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"insertTasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finishTask",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMDU2OTI1LCJleHAiOjE2NTIxNDMzMjV9.dXGa-KMNCdHfr8DeC0r5x18Xb81B5p-Jlht6fTAlfR8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idTask\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/finishTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"finishTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTask",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMDU2OTI1LCJleHAiOjE2NTIxNDMzMjV9.dXGa-KMNCdHfr8DeC0r5x18Xb81B5p-Jlht6fTAlfR8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idTask\": 1,\n\t\"description\": \"Alterei a descrição\",\n\t\"deadline\": \"2022-09-07 21:46:17\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/updateTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"updateTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMDU2OTI1LCJleHAiOjE2NTIxNDMzMjV9.dXGa-KMNCdHfr8DeC0r5x18Xb81B5p-Jlht6fTAlfR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/v1/getTaskUser?idUser=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"getTaskUser"
+					],
+					"query": [
+						{
+							"key": "idUser",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMDU2OTI1LCJleHAiOjE2NTIxNDMzMjV9.dXGa-KMNCdHfr8DeC0r5x18Xb81B5p-Jlht6fTAlfR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/v1/getTaskAll?email=diegoAdm@gmail.com&page=1&pageSize=10&order='desc'&orderBy=id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"getTaskAll"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "diegoAdm@gmail.com"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "order",
+							"value": "'desc'"
+						},
+						{
+							"key": "orderBy",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskAllLate",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjUyMDU3MTQzLCJleHAiOjE2NTIxNDM1NDN9.FFOFteIEeN-r2mc8O2os-kmvEj6sWB9IczjHmMpYris",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/v1/getTaskAllLate?email=diegoAdm@gmail.com&page=1&pageSize=10&order='desc'&orderBy=id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"getTaskAllLate"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "diegoAdm@gmail.com"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "order",
+							"value": "'desc'"
+						},
+						{
+							"key": "orderBy",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
